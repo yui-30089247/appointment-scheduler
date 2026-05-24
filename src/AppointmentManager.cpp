@@ -61,7 +61,6 @@ void AppointmentManager::editAppointment(int appointmentId) {
         if (this->appointments[i].getID() == appointmentId) {
             cout << "Editing Appointment: " << this->appointments[i].getTitle() << endl;
 
-            // Prompt user for new details
             string newTitle, newDateTimeStr, newLocationName, newAddress, newDescription;
 
             cout << "Enter new title (or press Enter to keep current): ";
@@ -105,8 +104,6 @@ void AppointmentManager::editAppointment(int appointmentId) {
             return;
         }
     }
-
-    // If no appointment with the given ID is found
     cout << "Appointment with ID " << appointmentId << " not found." << endl;
 }
 
