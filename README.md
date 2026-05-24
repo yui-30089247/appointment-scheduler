@@ -28,17 +28,16 @@ ctest --test-dir build --verbose
 Yui Dayal - CIS 25 Final Project
 
 ## Current Status
-- Implemented epoch conversion, combined Date class and Time class into DateTime class
-    - AI assistant was used in this feature [Link](docs/ai_collaboration.md)
+- Implemented a feature that allows user to modify an appointment
  
 **Implemented Features**:
 - Feature 1: Add a new appointment
+- Feature 2: Edit an appointment
  
 **Stubbed (compile but not implemented)**:
 - Feature 2: Search appointment
 - Feature 3: View appointment by specific category (date, time, location)
-- Feature 4: Edit appointment
-- Feature 5: Delete appointment
+- Feature 4: Delete appointment
  
 **Known Issues**:
 

@@ -14,6 +14,7 @@
 
 class Appointment {
     private:
+        int id;
         string title;
         DateTime dateTime;
         Location location;
@@ -21,7 +22,8 @@ class Appointment {
 
     public:
         Appointment();
-        Appointment(string title, DateTime datetime, Location location, Memo memo);
+        Appointment(int id, string title, DateTime datetime, Location location, Memo memo);
+        int getID() const;
         string getTitle() const;
         DateTime getDateTime() const;
         Location getLocation() const;

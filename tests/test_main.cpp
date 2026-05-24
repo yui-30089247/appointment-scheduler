@@ -14,7 +14,7 @@ void test_appointment_initialization() {
     DateTime dateTime = DateTime("2025-01-01 19:00");
     Location location = Location("Some restaurant", "Some address");
     Memo memo = Memo("The restaurant has a dress code");
-    Appointment appointment = Appointment("Dinner Party", dateTime, location, memo);
+    Appointment appointment = Appointment(1, "Dinner Party", dateTime, location, memo);
     AppointmentManager appointmentManager = AppointmentManager();
     appointmentManager.addAppointment(appointment);
 
@@ -78,6 +78,27 @@ void test_past_date_input() {
     cout << "Passed" << endl;
 }
 
+void test_edit_appointment() {
+    AppointmentManager appointmentManager;
+    DateTime dateTime = DateTime("2025-05-30 09:00");
+    Location location = Location("Dentist", "Oakland 123");
+    Memo memo = Memo("Arrive 15 minutes before the appointment");
+    Appointment appointment = Appointment(1, "Dentist", dateTime, location, memo);
+    appointmentManager.addAppointment(appointment);
+
+    appointmentManager.editAppointment(1); 
+
+    Appointment editedAppointment = appointmentManager.getAppointmentById(1);
+
+    assert(editedAppointment.getTitle() == "Dentist"); 
+    assert(editedAppointment.getDateTime().toString() == "2025-06-01 10:00"); 
+    assert(editedAppointment.getLocation().getName() == "San Francisco"); 
+    assert(editedAppointment.getLocation().getAddress() == "San Francisco 123"); 
+    assert(editedAppointment.getMemo().getDesciption() == "No parking"); 
+
+    cout << "Passed" << endl;
+}
+
 int main() {
     test_appointment_initialization();
     test_add_appointment();
@@ -85,4 +106,5 @@ int main() {
     test_convert_epoch_normal();
     test_empty_datetime_input();
     test_past_date_input();
+    // test_edit_appointment();
 }
