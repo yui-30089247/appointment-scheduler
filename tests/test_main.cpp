@@ -14,7 +14,7 @@ void test_appointment_initialization() {
     DateTime dateTime = DateTime("2025-01-01 19:00");
     Location location = Location("Some restaurant", "Some address");
     Memo memo = Memo("The restaurant has a dress code");
-    Appointment appointment = Appointment("Dinner Party", dateTime, location, memo);
+    Appointment appointment = Appointment(1, "Dinner Party", dateTime, location, memo);
     AppointmentManager appointmentManager = AppointmentManager();
     appointmentManager.addAppointment(appointment);
 

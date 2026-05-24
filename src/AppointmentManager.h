@@ -11,12 +11,14 @@ class AppointmentManager {
     public:
         AppointmentManager();
         vector<Appointment> getAppointments() const;
+        Appointment getAppointmentById(int id) const;
         void addAppointment(Appointment appointment);
         void deleteAppointment(Appointment appointment);
         void displayAppointments() const; 
-        void editAppointment(Appointment appointment);
+        void editAppointment(int appointmentId);
         void static displayMenu();
         int getNumAppointments() const;
+        
 };
 
 #endif

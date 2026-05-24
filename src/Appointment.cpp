@@ -7,8 +7,12 @@ using namespace std;
 
 Appointment::Appointment() : title(""), dateTime(DateTime()), location(Location()), memo(Memo()) {}
 
-Appointment::Appointment(std::string title, DateTime dateTime, Location location, Memo memo)
-    : title(title), dateTime(dateTime), location(location), memo(memo) {}
+Appointment::Appointment(int id, string title, DateTime dateTime, Location location, Memo memo)
+    : id(id), title(title), dateTime(dateTime), location(location), memo(memo) {}
+
+int Appointment::getID() const {
+    return this->id;
+} 
 
 string Appointment::getTitle() const {
     return this->title;
